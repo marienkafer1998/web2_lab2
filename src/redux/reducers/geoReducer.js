@@ -11,6 +11,9 @@ export default function geoReducer(state, action) {
         case Actions.SET_GEOLOCATION:
             state.coords = action.payload;
             break;
+        case Actions.GET_RESPONSE:
+            state.weather =  action.payload;
+            break;
 
         default:
             break;
