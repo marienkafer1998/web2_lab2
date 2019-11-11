@@ -3,7 +3,6 @@ import Form from "./components/Form";
 import Weather from "./components/Weather";
 import Geolocation from "./components/Geolocation";
 
-const API_KEY = "c98ceead6e7b88c9c865eaf7bdbb291d";
 
 class App extends React.Component {
     render() {
