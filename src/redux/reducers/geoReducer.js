@@ -1,4 +1,5 @@
-import { Actions } from "../actions/geoAction";
+import {Actions} from "../actions/geoAction";
+
 
 
 export default function geoReducer(state, action) {
@@ -8,16 +9,21 @@ export default function geoReducer(state, action) {
     };
 
     switch (action.type) {
-        case Actions.SET_GEOLOCATION:
-            state.coords = action.payload;
-            break;
-        case Actions.GET_RESPONSE:
-            state.weather =  action.payload;
-            break;
+        case Actions.SET_GEOLOCATION: {
+            return Object.assign({}, state, {
+                coords: action.payload
+            })
 
+        }
+
+
+        case Actions.GET_RESPONSE: {
+            return Object.assign({}, state, {
+                response: action.payload
+
+            })
+        }
         default:
-            break;
+            return state
     }
-
-    return state;
 }

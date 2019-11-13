@@ -1,7 +1,4 @@
-
-
 const API_KEY = "c98ceead6e7b88c9c865eaf7bdbb291d";
-
 
 
 export const Actions = {
@@ -17,18 +14,24 @@ export function setGeolocation(coords) {
 }
 
 export function loadWeather(coords) {
+    console.log('inside LoadWeather ');
+
     const API_URL = `http://api.openweathermap.org/data/2.5/weather?APPID=${API_KEY}&lat=${coords.lat}&lon=${coords.lon}`;
-    return function(dispatch) {
+
+    return function (dispatch) {
         fetch(API_URL)
             .then(response => {
                     response.json()
                         .then(json => {
                             console.log(response, json);
-                            dispatch(getResponse(json));
+                            if (response.ok) {
+                                dispatch(getResponse(json));
+                            }
                         })
                 }
             )
     }
+
 }
 
 export function getResponse(response) {
