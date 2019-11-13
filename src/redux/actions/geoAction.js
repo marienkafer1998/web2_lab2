@@ -14,8 +14,6 @@ export function setGeolocation(coords) {
 }
 
 export function loadWeather(coords) {
-    console.log('inside LoadWeather ');
-
     const API_URL = `http://api.openweathermap.org/data/2.5/weather?APPID=${API_KEY}&lat=${coords.lat}&lon=${coords.lon}`;
 
     return function (dispatch) {
@@ -23,7 +21,6 @@ export function loadWeather(coords) {
             .then(response => {
                     response.json()
                         .then(json => {
-                            console.log(response, json);
                             if (response.ok) {
                                 dispatch(getResponse(json));
                             }

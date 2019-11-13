@@ -1,15 +1,12 @@
 import React from "react";
 import WeatherParam from "./WeatherParam";
+import Loader from "./Loader";
 
 const API_ICON_URL = "https://openweathermap.org/img/wn/";
 
 export function getIconURL(iconCode) {
     return `${API_ICON_URL}${iconCode}.png`;
 }
-
-
-
-
 
 export default class Weather extends React.Component {
     // componentDidMount() {
@@ -26,7 +23,7 @@ export default class Weather extends React.Component {
 
     renderLoader() {
         return (
-            <div>popa</div>
+            <Loader/>
         )
     }
 

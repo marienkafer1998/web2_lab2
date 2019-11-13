@@ -44,10 +44,8 @@ class Geolocation extends React.Component {
                 <button
                     onClick={() => this.getGeolocation()}>Get geolocation
                 </button>
-                {this.props.response &&
-                // this.props.response.cod != 200 &&
+                {this.props.response && this.props.response.cod == 200 &&
                 <Weather
-                    //toLoad={() => this.props.loadWeather(this.props.coords)}
                     weather={weatherParams(this.props.response)}/>}
 
                 {!this.props.coords && <div>Error: there is no geolocation</div>}
