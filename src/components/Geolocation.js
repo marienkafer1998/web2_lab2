@@ -1,35 +1,11 @@
 import React from "react";
 import {connect} from "react-redux";
 import Weather from "./Weather";
-import {setGeolocation, loadWeather} from "../redux/actions/geoAction";
+import {setGeolocation, loadWeatherWithCoords} from "../redux/actions/actions";
+import Loader from "./Loader";
 
 
-export function weatherParams(response) {
-    const {
-        coord: coords,
-        weather: [{  description, icon }],
-        main: {
-            temp: temperature,
-            pressure,
-            humidity
-        },
-        wind: {
-            speed: windSpeed
-        },
-        name: cityName
-    } = response;
 
-    return {
-        cityName,
-        temperature,
-        pressure,
-        humidity,
-        windSpeed,
-        icon,
-        description,
-        coords
-    }
-}
 
 class Geolocation extends React.Component {
 
@@ -44,9 +20,12 @@ class Geolocation extends React.Component {
                 <button
                     onClick={() => this.getGeolocation()}>Get geolocation
                 </button>
-                {this.props.response && this.props.response.cod == 200 &&
+                {this.props.response && this.props.coords &&
                 <Weather
-                    weather={weatherParams(this.props.response)}/>}
+                    onFetch={() => this.props.loadWeatherWithCoords(this.props.coords)}
+                    weather={this.props.response}/>
+                    }
+                {!this.props.response && <Loader />}
 
                 {!this.props.coords && <div>Error: there is no geolocation</div>}
 
@@ -56,7 +35,7 @@ class Geolocation extends React.Component {
 
 
     getGeolocation() {
-        console.log('before getting ' + this.props.response);
+        console.log('in getGeoloc ' + this.props.response);
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(position => {
                     const coords = {
@@ -64,7 +43,7 @@ class Geolocation extends React.Component {
                         lat: position.coords.latitude.toFixed(2)
                     };
                     this.props.setGeolocation(coords);
-                    this.props.loadWeather(coords);
+                    this.props.loadWeatherWithCoords(coords);
                     console.log('after getting ' + this.props.response);
                 },
                 () => {
@@ -74,7 +53,7 @@ class Geolocation extends React.Component {
 
                     }
                     this.props.setGeolocation(coords);
-                    this.props.loadWeather(this.props.coords);
+                    this.props.loadWeatherWithCoords(this.props.coords);
                     console.log('after getting ' + this.props.response);
 
                 });
@@ -92,7 +71,7 @@ function mapStateToProps(state) {
 
 // const actions = {
 //     setGeolocation,
-//     loadWeather
+//     loadWeatherWithCoords
 // };
 
 function mapDispatchToProps(dispatch) {
@@ -101,8 +80,8 @@ function mapDispatchToProps(dispatch) {
             dispatch(setGeolocation(coords));
         },
 
-        loadWeather: (coords) => {
-            dispatch(loadWeather(coords));
+        loadWeatherWithCoords: (coords) => {
+            dispatch(loadWeatherWithCoords(coords));
         }
     };
 }

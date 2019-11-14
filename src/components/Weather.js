@@ -9,11 +9,12 @@ export function getIconURL(iconCode) {
 }
 
 export default class Weather extends React.Component {
-    // componentDidMount() {
-    //     this.props.toLoad();
-    // }
+    componentDidMount() {
+        this.props.onFetch();
+    }
 
     render() {
+        console.log('In weather');
         if (!this.props.weather) {
             return this.renderLoader();
         }
@@ -42,7 +43,7 @@ export default class Weather extends React.Component {
                     lat: latitude,
                     lon: longitude
                 } = {}
-            }
+            }, onDelete
         } = this.props;
         return (
             <div className="weather">
@@ -57,6 +58,8 @@ export default class Weather extends React.Component {
                 <WeatherParam name="Pressure" value={`${pressure} hPa`} />
                 <WeatherParam name="Humidity" value={`${humidity}%`} />
                 <WeatherParam name="Coords" value={`${latitude}, ${longitude}`} />
+                {onDelete && <button onClick={onDelete}>X</button>}
+
             </div>
         );
     }

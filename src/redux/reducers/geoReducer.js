@@ -1,5 +1,5 @@
-import {Actions} from "../actions/geoAction";
-
+import {Actions} from "../actions/actions";
+import {getParams} from "../../extraWeatherFunc";
 
 
 export default function geoReducer(state, action) {
@@ -19,7 +19,7 @@ export default function geoReducer(state, action) {
 
         case Actions.GET_RESPONSE: {
             return Object.assign({}, state, {
-                response: action.payload
+                response: getParams(action.payload)
 
             })
         }
