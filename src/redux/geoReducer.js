@@ -1,5 +1,5 @@
-import {Actions} from "../actions/actions";
-import {getParams} from "../../extraWeatherFunc";
+import {Actions} from "./actions";
+import {getParams} from "../extraWeatherFunc";
 
 
 export default function geoReducer(state, action) {

@@ -1,35 +1,45 @@
 import React from "react";
 import {connect} from "react-redux";
-import Weather from "./Weather";
-import {setGeolocation, loadWeatherWithCoords} from "../redux/actions/actions";
+import MainWeather from "./Weather/MainWeather";
+import {setGeolocation, loadWeatherWithCoords} from "../redux/actions";
 import Loader from "./Loader";
+import {Button, Container, Col, Row} from "reactstrap";
 
 
 
 
 class Geolocation extends React.Component {
 
-    // componentDidMount() {
-    //     this.getGeolocation();
-    // }
+    componentDidMount() {
+        this.getGeolocation();
+    }
 
     render() {
         console.log('rendering', this.props);
-        return (
-            <div>
-                <button
-                    onClick={() => this.getGeolocation()}>Get geolocation
-                </button>
-                {this.props.response && this.props.coords &&
-                <Weather
-                    onFetch={() => this.props.loadWeatherWithCoords(this.props.coords)}
-                    weather={this.props.response}/>
+        let body =
+            <Container>
+                <Col>
+                Weather is here
+                </Col>
+                <Col>
+                    <Button color="secondary" size="lg"
+                        onClick={() => this.getGeolocation()}>Get geolocation
+                    </Button>
+                    {this.props.response && this.props.coords &&
+                    <MainWeather
+                        onFetch={() => this.props.loadWeatherWithCoords(this.props.coords)}
+                        weather={this.props.response}/>
                     }
-                {!this.props.response && <Loader />}
+                    {!this.props.response && <Loader />}
 
-                {!this.props.coords && <div>Error: there is no geolocation</div>}
+                    {!this.props.coords && <div>Error: there is no geolocation</div>}
+                </Col>
+            </Container>
 
-            </div>
+        return (
+            <Container className="weather">
+                {body}
+            </Container>
         );
     }
 
@@ -69,10 +79,7 @@ function mapStateToProps(state) {
     };
 }
 
-// const actions = {
-//     setGeolocation,
-//     loadWeatherWithCoords
-// };
+
 
 function mapDispatchToProps(dispatch) {
     return {

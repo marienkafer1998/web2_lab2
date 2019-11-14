@@ -1,6 +1,6 @@
-import { Actions } from "../actions/actions";
-import getFavoritesFromStorage from "../../LocalStorage";
-import {getParams} from "../../extraWeatherFunc";
+import { Actions } from "./actions";
+import getFavoritesFromStorage from "../LocalStorage";
+import {getParams} from "../extraWeatherFunc";
 
 
 const initialState = {
@@ -23,11 +23,14 @@ export default function favReducer(state = initialState, action) {
             break;
 
         case Actions.DELETE_FAVORITE:
+
             state.favorites.delete(action.payload);
+
             break;
 
         case Actions.GET_RESPONSE_NAME:
             const forecast = getParams(action.payload.response);
+            state.favorites.delete(action.payload.cityName);
             state.favorites.set(forecast.cityName, forecast );
             break;
 

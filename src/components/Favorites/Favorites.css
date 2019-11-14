@@ -1,0 +1,15 @@
+.adder {
+    width: 300px;
+    font-size: 20px;
+    padding: 6px 0 4px 10px;
+    border: 1px solid #cecece;
+    background: #F6F6f6;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.fav {
+    color: #74878c;
+    font-weight: 500;
+    font-size: 3em;
+}

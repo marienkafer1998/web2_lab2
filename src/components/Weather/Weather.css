@@ -1,0 +1,31 @@
+.small-weather {
+    font-size: 10px;
+}
+
+.main-weather {
+    font-size: 20px;
+}
+
+.cityName {
+    color: #74878c;
+    font-weight: 500;
+    font-size: 3em;
+}
+
+.image {
+    width: 6em;
+}
+
+.temp {
+    color: #81848a;
+    font-weight: 500;
+    font-size: 4em;
+}
+
+.card-img-top {
+    flex: 0 0 auto;
+}
+
+.col-sm-4 {
+    border: 1px solid
+}
