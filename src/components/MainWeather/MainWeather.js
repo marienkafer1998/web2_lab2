@@ -1,8 +1,8 @@
 import React from "react";
-import WeatherParam from "../WeatherParam/WeatherParam";
-import Loader from "../Loader";
-import "./Weather.css";
-import {Button, Col, Container, Row} from "reactstrap";
+import WeatherParameter from "../WeatherParameter/WeatherParameter";
+import Loader from "../Loader/Loader";
+import "../Weather/Weather.css";
+import {Col, Container, Row} from "reactstrap";
 
 const API_ICON_URL = "https://openweathermap.org/img/wn/";
 
@@ -12,6 +12,7 @@ export function getIconURL(iconCode) {
 
 export default class MainWeather extends React.Component {
     componentDidMount() {
+        console.log('parasha', typeof this.props.onFetch);
         this.props.onFetch();
     }
 
@@ -57,11 +58,11 @@ export default class MainWeather extends React.Component {
                         </Row>
                     </Col>
                     <Col>
-                        <WeatherParam name="Wind" value={`${windSpeed} m/s`} />
-                        <WeatherParam name="Cloudness" value={description} />
-                        <WeatherParam name="Pressure" value={`${pressure} hPa`} />
-                        <WeatherParam name="Humidity" value={`${humidity}%`} />
-                        <WeatherParam name="Coords" value={`${latitude}, ${longitude}`} />
+                        <WeatherParameter name="Wind" value={`${windSpeed} m/s`} />
+                        <WeatherParameter name="Cloudness" value={description} />
+                        <WeatherParameter name="Pressure" value={`${pressure} hPa`} />
+                        <WeatherParameter name="Humidity" value={`${humidity}%`} />
+                        <WeatherParameter name="Coords" value={`${latitude}, ${longitude}`} />
                     </Col>
 
                 </Row>

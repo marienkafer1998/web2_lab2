@@ -1,6 +1,8 @@
 import React from "react";
-import "./Favorites.css";
-import Button from "reactstrap/es/Button";
+import "../Favorites/Favorites.css";
+import {
+    Button
+} from 'reactstrap';
 
 
 

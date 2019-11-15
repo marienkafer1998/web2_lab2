@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Col, Container, Row} from "reactstrap";
+import {Container} from "reactstrap";
 
 
 export default function Loader(props) {

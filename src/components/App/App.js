@@ -1,6 +1,6 @@
 import React from "react";
-import Geolocation from "./components/Geolocation";
-import Favorites from "./components/Favorites";
+import Geolocation from "../Geolocation/Geolocation";
+import Favorites from "../Favorites/Favorites";
 
 
 class App extends React.Component {
@@ -11,9 +11,7 @@ class App extends React.Component {
                 <Favorites />
             </div>
         )
-
     }
-
 }
 
 export default App;

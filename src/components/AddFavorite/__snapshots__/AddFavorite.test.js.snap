@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddFavorite functional rendered properly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <input
+    className="adder"
+    name="cityName"
+    placeholder="Add new city"
+    required={true}
+    text-transform="capitalize"
+    type="text"
+  />
+  <button
+    aria-label={null}
+    className="btn btn-secondary"
+    onClick={[Function]}
+    type="submit"
+  >
+    +
+  </button>
+</form>
+`;
+
+exports[`AddFavorite functional renders  1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <input
+    className="adder"
+    name="cityName"
+    placeholder="Add new city"
+    required={true}
+    text-transform="capitalize"
+    type="text"
+  />
+  <button
+    aria-label={null}
+    className="btn btn-secondary"
+    onClick={[Function]}
+    type="submit"
+  >
+    +
+  </button>
+</form>
+`;
+
+exports[`AddFavorite functional renders correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <input
+    className="adder"
+    name="cityName"
+    placeholder="Add new city"
+    required={true}
+    text-transform="capitalize"
+    type="text"
+  />
+  <button
+    aria-label={null}
+    className="btn btn-secondary"
+    onClick={[Function]}
+    type="submit"
+  >
+    +
+  </button>
+</form>
+`;
+
+exports[`WeatherHere renders correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <input
+    className="adder"
+    name="cityName"
+    placeholder="Add new city"
+    required={true}
+    text-transform="capitalize"
+    type="text"
+  />
+  <button
+    aria-label={null}
+    className="btn btn-secondary"
+    onClick={[Function]}
+    type="submit"
+  >
+    +
+  </button>
+</form>
+`;

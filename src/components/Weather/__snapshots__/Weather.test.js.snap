@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weather functional rendered properly 1`] = `
+<div
+  className="weather container"
+>
+  <div
+    className="small-weather container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="cityName col"
+      >
+        Moscow
+      </div>
+      <div
+        className="temp col"
+      >
+        2.1
+        ℃
+      </div>
+      <div
+        className="image col"
+      >
+        <img
+          alt="Weather icon"
+          src="https://openweathermap.org/img/wn/04n.png"
+        />
+      </div>
+      <div
+        className="col"
+      >
+        <button
+          aria-label={null}
+          className="button btn btn-secondary btn-10px"
+          onClick={[Function]}
+          type="button"
+        >
+          X
+        </button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      className="param"
+    >
+      <div
+        className="name"
+      >
+        Wind
+      </div>
+      <div
+        className="value"
+      >
+        2 m/s
+      </div>
+    </div>
+    <div
+      className="param"
+    >
+      <div
+        className="name"
+      >
+        Cloudness
+      </div>
+      <div
+        className="value"
+      >
+        overcast clouds
+      </div>
+    </div>
+    <div
+      className="param"
+    >
+      <div
+        className="name"
+      >
+        Pressure
+      </div>
+      <div
+        className="value"
+      >
+        1003 hPa
+      </div>
+    </div>
+    <div
+      className="param"
+    >
+      <div
+        className="name"
+      >
+        Humidity
+      </div>
+      <div
+        className="value"
+      >
+        69%
+      </div>
+    </div>
+    <div
+      className="param"
+    >
+      <div
+        className="name"
+      >
+        Coords
+      </div>
+      <div
+        className="value"
+      >
+        37.62, 55.75
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`WeatherParam functional rendered properly 1`] = `
+<div
+  className="param"
+>
+  <div
+    className="name"
+  />
+  <div
+    className="value"
+  />
+</div>
+`;
+
+exports[`WeatherParameter functional rendered properly 1`] = `
+<div
+  className="param"
+>
+  <div
+    className="name"
+  />
+  <div
+    className="value"
+  />
+</div>
+`;

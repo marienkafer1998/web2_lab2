@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherParameter functional rendered properly 1`] = `
+<div
+  className="param"
+>
+  <div
+    className="name"
+  />
+  <div
+    className="value"
+  />
+</div>
+`;

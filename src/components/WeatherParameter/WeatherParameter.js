@@ -1,8 +1,8 @@
 import React from "react";
-import "./WeatherParam.css";
+import "./WeatherParameter.css";
 
 
-const WeatherParam = props => (
+const WeatherParameter = props => (
     <div className="param">
         <div className="name">{props.name}</div>
         <div className="value">{props.value}</div>
@@ -10,4 +10,4 @@ const WeatherParam = props => (
 
 );
 
-export default WeatherParam;
+export default WeatherParameter;

@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favorites functional rendered properly 1`] = `
+<div
+  className="favorite-weather container"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col"
+      >
+        <h1
+          className="fav"
+        >
+          Favorites
+        </h1>
+      </div>
+      <div
+        className="col-sm-5 offset-sm-1"
+      >
+        <form
+          onSubmit={[Function]}
+        >
+          <input
+            className="adder"
+            name="cityName"
+            placeholder="Add new city"
+            required={true}
+            text-transform="capitalize"
+            type="text"
+          />
+          <button
+            aria-label={null}
+            className="btn btn-secondary"
+            onClick={[Function]}
+            type="submit"
+          >
+            +
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div
+    className="row"
+  />
+</div>
+`;
+
+exports[`WeatherParam functional rendered properly 1`] = `
+<div
+  className="param"
+>
+  <div
+    className="name"
+  />
+  <div
+    className="value"
+  />
+</div>
+`;
+
+exports[`WeatherParameter functional rendered properly 1`] = `
+<div
+  className="param"
+>
+  <div
+    className="name"
+  />
+  <div
+    className="value"
+  />
+</div>
+`;

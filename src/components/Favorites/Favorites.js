@@ -1,12 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 import {
-    Card, CardDeck, Container, Row, Col
+    Container, Row, Col
 } from 'reactstrap';
-import AddFavorite from "./AddFavorite";
-import Weather from "./Weather/Weather";
-import { addFavorite, deleteFavorite, loadWeatherWithName } from "../redux/actions";
-import "./Weather/Weather.css";
+import AddFavorite from "../AddFavorite/AddFavorite";
+import Weather from "../Weather/Weather";
+import { addFavorite, deleteFavorite, loadWeatherWithName } from "../../redux/actions";
+import "../Weather/Weather.css";
 
 
 

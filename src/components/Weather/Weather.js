@@ -1,6 +1,6 @@
 import React from "react";
-import WeatherParam from "../WeatherParam/WeatherParam";
-import Loader from "../Loader";
+import WeatherParameter from "../WeatherParameter/WeatherParameter";
+import Loader from "../Loader/Loader";
 import "./Weather.css";
 import {Button, Col, Container, Row} from "reactstrap";
 
@@ -62,11 +62,11 @@ export default class Weather extends React.Component {
                 </Row>
             </Container>;
             body = <div>
-                <WeatherParam name="Wind" value={`${windSpeed} m/s`} />
-                <WeatherParam name="Cloudness" value={description} />
-                <WeatherParam name="Pressure" value={`${pressure} hPa`} />
-                <WeatherParam name="Humidity" value={`${humidity}%`} />
-                <WeatherParam name="Coords" value={`${latitude}, ${longitude}`} />
+                <WeatherParameter name="Wind" value={`${windSpeed} m/s`} />
+                <WeatherParameter name="Cloudness" value={description} />
+                <WeatherParameter name="Pressure" value={`${pressure} hPa`} />
+                <WeatherParameter name="Humidity" value={`${humidity}%`} />
+                <WeatherParameter name="Coords" value={`${latitude}, ${longitude}`} />
             </div>}
         return (
             <Container className="weather">

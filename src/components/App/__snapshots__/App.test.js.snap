@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App functional rendered properly 1`] = `
+<div>
+  <div
+    className="weather container"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="col"
+      >
+        Weather is here
+      </div>
+      <div
+        className="col"
+      >
+        <button
+          aria-label={null}
+          className="btn btn-secondary btn-lg"
+          onClick={[Function]}
+          type="button"
+        >
+          Get geolocation
+        </button>
+        <div
+          className="container"
+        >
+          <h1>
+            Please, wait, weather is loading...
+          </h1>
+          <img
+            alt="Weather is loading"
+            src="https://anatomised.com/wp-content/uploads/2016/05/spinner-test4.gif"
+            width="100px"
+          />
+        </div>
+        <div>
+          Error: there is no geolocation
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="favorite-weather container"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col"
+        >
+          <h1
+            className="fav"
+          >
+            Favorites
+          </h1>
+        </div>
+        <div
+          className="col-sm-5 offset-sm-1"
+        >
+          <form
+            onSubmit={[Function]}
+          >
+            <input
+              className="adder"
+              name="cityName"
+              placeholder="Add new city"
+              required={true}
+              text-transform="capitalize"
+              type="text"
+            />
+            <button
+              aria-label={null}
+              className="btn btn-secondary"
+              onClick={[Function]}
+              type="submit"
+            >
+              +
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div
+      className="row"
+    />
+  </div>
+</div>
+`;
