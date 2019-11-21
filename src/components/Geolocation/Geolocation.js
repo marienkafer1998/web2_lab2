@@ -18,9 +18,9 @@ class Geolocation extends React.Component {
         console.log('rendering', this.props);
         let body =
             <Container>
-                <Col>
-                Weather is here
-                </Col>
+                {/*<Col>*/}
+                {/*Weather is here*/}
+                {/*</Col>*/}
                 <Col>
                     <Button color="secondary" size="lg"
                         onClick={() => this.getGeolocation()}>Get geolocation

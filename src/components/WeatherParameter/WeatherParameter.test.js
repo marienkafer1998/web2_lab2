@@ -1,15 +1,60 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import WeatherParameter from "./WeatherParameter.js";
-import {Provider} from "react-redux";
-import store from "../../store";
 
-it('WeatherParameter functional rendered properly', () => {
-    const tree = renderer.create(
-        <Provider store={store}>
-            <WeatherParameter/>
-        </Provider>
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-});
+describe('WeatherParameter functional rendered properly', () => {
 
+    const paramExample = {
+        name: "Temperature",
+        value: "1.5",
+    };
+
+    test("should has name and value", () => {
+        const {name, value} = paramExample;
+
+        const tree = renderer
+            .create(
+                <WeatherParameter
+                    name={name}
+                    value={value}
+                />)
+            .toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+
+    test("should has only name", () => {
+        const {name} = paramExample;
+
+        const tree = renderer
+            .create(
+                <WeatherParameter
+                    name={name}
+                />)
+            .toJSON();
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test("should has only value", () => {
+        const {value} = paramExample;
+
+        const tree = renderer
+            .create(
+                <WeatherParameter
+                    value={value}
+                />)
+            .toJSON();
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test("should has nothing", () => {
+        const tree = renderer
+            .create(
+                <WeatherParameter/>)
+            .toJSON();
+
+        expect(tree).toMatchSnapshot();
+    });
+}

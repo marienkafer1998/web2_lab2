@@ -1,12 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Weather from "./Weather.js";
+import MainWeather from "./MainWeather.js";
 import {Provider} from "react-redux";
 import store from "../../store";
-import {loadWeatherWithName, deleteFavorite} from "../../redux/actions";
+import {loadWeatherWithCoords} from "../../redux/actions";
+import Weather from "../Weather/Weather";
 
-
-describe('Weather functional rendered properly', () => {
+describe('MainWeather functional rendered properly', () => {
 
     const weatherData = {
         cityName: 'Moscow',
@@ -20,12 +20,11 @@ describe('Weather functional rendered properly', () => {
     };
 
 
-    test('should has city weather and delete button', () => {
+    test('should has city weather', () => {
         const tree = renderer.create(
             <Provider store={store}>
-                <Weather onFetch={() => loadWeatherWithName(weatherData.cityName)}
-                         onDelete={() => deleteFavorite(weatherData.cityName)}
-                         weather={weatherData}/>
+                <MainWeather onFetch={() => loadWeatherWithCoords(weatherData.coords)}
+                             weather={weatherData}/>
             </Provider>
         ).toJSON();
         expect(tree).toMatchSnapshot();
@@ -42,5 +41,4 @@ describe('Weather functional rendered properly', () => {
 
         expect(tree).toMatchSnapshot();
     });
-
 }

@@ -11,7 +11,6 @@ const initialState = {
 export default function favReducer(state = initialState, action) {
     state = {
         ...state,
-        error: false,
         favorites: new Map(state.favorites)
     };
 

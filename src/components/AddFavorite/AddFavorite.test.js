@@ -4,13 +4,17 @@ import AddFavorite from "./AddFavorite.js";
 import {Provider} from "react-redux";
 import store from "../../store";
 
-it('AddFavorite functional rendered properly', () => {
-    const tree = renderer.create(
-        <Provider store={store}>
-            <AddFavorite/>
-        </Provider>
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+describe('AddFavorite functional rendered properly', () => {
+
+    test("should has AddFavourite Form", () => {
+        const tree = renderer.create(
+            <Provider store={store}>
+                <AddFavorite/>
+            </Provider>
+        ).toJSON();
+        expect(tree).toMatchSnapshot();
+
+    });
 });
 
 
