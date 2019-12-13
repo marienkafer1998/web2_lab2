@@ -43,4 +43,4 @@ describe('Weather functional rendered properly', () => {
         expect(tree).toMatchSnapshot();
     });
 
-}
+});

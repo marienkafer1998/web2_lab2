@@ -47,7 +47,7 @@ export function loadWeatherWithName(cityName) {
                         .then(json => {
                             console.log(response, json);
 
-                            if (json.cod == 200) {
+                            if (json.cod === 200) {
                                 console.log("City input ", cityName);
 
                                 dispatch(getResponseName(cityName, json));

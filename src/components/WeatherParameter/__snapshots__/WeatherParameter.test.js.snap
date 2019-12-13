@@ -12,3 +12,63 @@ exports[`WeatherParameter functional rendered properly 1`] = `
   />
 </div>
 `;
+
+exports[`WeatherParameter functional rendered properly should has name and value 1`] = `
+<div
+  className="param"
+>
+  <div
+    className="name"
+  >
+    Temperature
+  </div>
+  <div
+    className="value"
+  >
+    1.5
+  </div>
+</div>
+`;
+
+exports[`WeatherParameter functional rendered properly should has nothing 1`] = `
+<div
+  className="param"
+>
+  <div
+    className="name"
+  />
+  <div
+    className="value"
+  />
+</div>
+`;
+
+exports[`WeatherParameter functional rendered properly should has only name 1`] = `
+<div
+  className="param"
+>
+  <div
+    className="name"
+  >
+    Temperature
+  </div>
+  <div
+    className="value"
+  />
+</div>
+`;
+
+exports[`WeatherParameter functional rendered properly should has only value 1`] = `
+<div
+  className="param"
+>
+  <div
+    className="name"
+  />
+  <div
+    className="value"
+  >
+    1.5
+  </div>
+</div>
+`;

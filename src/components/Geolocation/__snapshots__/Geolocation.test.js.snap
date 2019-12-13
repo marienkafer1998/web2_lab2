@@ -43,6 +43,41 @@ exports[`Geolocation functional rendered properly 1`] = `
 </div>
 `;
 
+exports[`Geolocation functional rendered properly should has city forecast 1`] = `
+<div
+  className="weather container"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="col"
+    >
+      <button
+        aria-label={null}
+        className="btn btn-secondary btn-lg"
+        onClick={[Function]}
+        type="button"
+      >
+        Get geolocation
+      </button>
+      <div
+        className="container"
+      >
+        <h1>
+          Please, wait, weather is loading...
+        </h1>
+        <img
+          alt="Weather is loading"
+          src="https://anatomised.com/wp-content/uploads/2016/05/spinner-test4.gif"
+          width="100px"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`WeatherParam functional rendered properly 1`] = `
 <div
   className="param"

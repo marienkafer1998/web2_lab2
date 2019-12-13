@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import MainWeather from "../MainWeather/MainWeather";
 import {setGeolocation, loadWeatherWithCoords} from "../../redux/actions";
 import Loader from "../Loader/Loader";
-import {Button, Container, Col, Row} from "reactstrap";
+import {Button, Container, Col} from "reactstrap";
 
 
 

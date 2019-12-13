@@ -54,6 +54,7 @@ class Favorites extends React.Component {
     handleAddFavorite(e) {
         e.preventDefault();
         const cityName = e.currentTarget.elements.cityName.value;
+        e.currentTarget.elements.cityName.value = "";
         this.props.addFavorite(cityName);
         console.log(this.props.favorites.entries());
 

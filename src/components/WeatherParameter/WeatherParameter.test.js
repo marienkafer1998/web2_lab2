@@ -57,4 +57,4 @@ describe('WeatherParameter functional rendered properly', () => {
 
         expect(tree).toMatchSnapshot();
     });
-}
+});
