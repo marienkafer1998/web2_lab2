@@ -5,12 +5,15 @@ import {
 } from 'reactstrap';
 import AddFavorite from "../AddFavorite/AddFavorite";
 import Weather from "../Weather/Weather";
-import { addFavorite, deleteFavorite, loadWeatherWithName } from "../../redux/actions";
+import {addFavorite, deleteFavorite, loadFavourites, loadWeatherWithName} from "../../redux/actions";
 import "../Weather/Weather.css";
 
 
 
 class Favorites extends React.Component {
+    componentDidMount() {
+        this.props.loadFavourites();
+    }
 
     render() {
         console.log(this.props.favorites.entries());
@@ -39,6 +42,7 @@ class Favorites extends React.Component {
                 })
             }
 </Row>
+
 
 
         return (
@@ -81,6 +85,9 @@ function mapDispatchToProps(dispatch) {
 
         loadWeatherWithName: (cityName) => {
             dispatch(loadWeatherWithName(cityName));
+        },
+        loadFavourites: () => {
+            dispatch(loadFavourites())
         }
     };
 }

@@ -1,5 +1,5 @@
 
-const API_BASE_URL = "http://api.openweathermap.org/data/2.5/weather?APPID=c98ceead6e7b88c9c865eaf7bdbb291d"
+const API_BASE_URL = "http://localhost:8000";
 
 
 export const Actions = {
@@ -8,7 +8,7 @@ export const Actions = {
     GET_RESPONSE_NAME: "GET_RESPONSE_NAME",
     ADD_FAVORITE: "ADD_FAVORITE",
     DELETE_FAVORITE: "DELETE_FAVORITE",
-    }
+};
 
 export function setGeolocation(coords) {
     return {
@@ -18,7 +18,7 @@ export function setGeolocation(coords) {
 }
 
 export function loadWeatherWithCoords(coords) {
-    const API_URL = `${API_BASE_URL}&lat=${coords.lat}&lon=${coords.lon}`;
+    const API_URL = `${API_BASE_URL}/weather/coordinates?lat=${coords.lat}&lon=${coords.lon}`;
 
     return function (dispatch) {
         fetch(API_URL)
@@ -37,7 +37,7 @@ export function loadWeatherWithCoords(coords) {
 
 
 export function loadWeatherWithName(cityName) {
-    const API_URL = `${API_BASE_URL}&q=${cityName}`;
+    const API_URL = `${API_BASE_URL}/weather?cityName=${cityName}`;
     console.log(API_URL);
 
     return function(dispatch) {
@@ -80,15 +80,55 @@ export function getResponseName(cityName, response ) {
 
 
 export function addFavorite(cityName) {
-    return {
-        type: Actions.ADD_FAVORITE,
-        payload: cityName
-    };
+    const API_URL = `${API_BASE_URL}/favourites`;
+    return function (dispatch) {
+        fetch(API_URL,{
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({name: cityName})
+        }).then(() => {
+            dispatch({
+                type: Actions.ADD_FAVORITE,
+                payload: cityName
+            });
+        })
+    }
 }
 
 export function deleteFavorite(cityName) {
-    return {
-        type: Actions.DELETE_FAVORITE,
-        payload: cityName
+    const API_URL = `${API_BASE_URL}/favourites`;
+    return function (dispatch) {
+        fetch(API_URL,{
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({name: cityName})
+        }).then(() => {
+            dispatch({
+                type: Actions.DELETE_FAVORITE,
+                payload: cityName
+            });
+        })
     };
+}
+
+export function loadFavourites() {
+    const API_URL = `${API_BASE_URL}/favourites`;
+    return function (dispatch) {
+        fetch(API_URL).then(response=>{
+            response.json().then(favourites => {
+                favourites.forEach((item)=>{
+                    dispatch({
+                        type: Actions.ADD_FAVORITE,
+                        payload: item.name
+                    })
+                })
+            })
+        })
+    }
 }

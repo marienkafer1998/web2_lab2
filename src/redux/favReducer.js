@@ -1,10 +1,9 @@
 import { Actions } from "./actions";
-import getFavoritesFromStorage from "../LocalStorage";
 import {getParams} from "../extraWeatherFunc";
 
 
 const initialState = {
-    favorites: getFavoritesFromStorage()
+    favorites: []
 };
 
 
